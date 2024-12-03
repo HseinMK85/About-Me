@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houssein Mokalled - Data Analyst Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #4CAF50, #00BCD4);
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
+
+        nav {
+            background: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 40px 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+
+        .about, .skills, .certifications, .contact {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skills ul, .certifications ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills li, .certifications li {
+            background: #f9f9f9;
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .skills li.active, .certifications li.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            background: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Houssein Mokalled</h1>
+        <p>Student | Data Analytics Enthusiast</p>
+    </header>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about" class="hidden">
+        <div class="about">
+            <h2>About Me</h2>
+            <p>
+                I am a Computer Science student at the Lebanese International University specializing in Data Analytics. 
+                Passionate about uncovering insights from data and turning them into actionable strategies. 
+                Building my career and always open to learning new technologies and solving complex problems.
+            </p>
+        </div>
+    </section>
+    <section id="skills" class="hidden">
+        <div class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Data Analysis with Python</li>
+                <li>SQL and Database Management</li>
+                <li>Excel (Advanced)</li>
+                <li>Tableau</li>
+                <li>Power BI</li>
+                <li>R Programming and Data Science</li>
+                <li>Microsoft Office Suite</li>
+            </ul>
+        </div>
+    </section>
+    <section id="certifications" class="hidden">
+        <div class="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Data Analysis (Simplilearn)</li>
+                <li>SQL Certification (Simplilearn)</li>
+                <li>Programming Basics and Data Analytics with Python</li>
+                <li>Microsoft Certified: Power BI Data Analyst Associate</li>
+                <li>Tableau Specialist Certification</li>
+            </ul>
+        </div>
+    </section>
+    <section id="contact" class="hidden">
+        <div class="contact">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:Mohammadmok85@gmail.com">Mohammadmok85@gmail.com</a></p>
+            <p>Phone: +961 76 879 011</p>
+            <p><a href="https://www.linkedin.com/in/hussein-mokaled-48742b274/" target="_blank">LinkedIn Profile</a></p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Houssein Mokalled. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        const listItems = document.querySelectorAll('li');
+
+        window.addEventListener('scroll', () => {
+            const triggerBottom = window.innerHeight * 0.9;
+
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+
+                if (sectionTop < triggerBottom) {
+                    section.classList.add('active');
+                }
+            });
+
+            listItems.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+
+                if (itemTop < triggerBottom) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
